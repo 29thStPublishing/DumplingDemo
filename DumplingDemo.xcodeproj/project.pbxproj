@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FFD5C3551AF34B4700811FE4 /* Dumpling2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD5C3531AF34B3500811FE4 /* Dumpling2.framework */; };
+		FFD5C3561AF34B4700811FE4 /* Dumpling2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FFD5C3531AF34B3500811FE4 /* Dumpling2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FFD851D21AF219E400884668 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD851D11AF219E400884668 /* AppDelegate.swift */; };
+		FFD851D41AF219E400884668 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD851D31AF219E400884668 /* MasterViewController.swift */; };
+		FFD851D61AF219E400884668 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD851D51AF219E400884668 /* DetailViewController.swift */; };
+		FFD851D91AF219E400884668 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFD851D71AF219E400884668 /* Main.storyboard */; };
+		FFD851DB1AF219E400884668 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD851DA1AF219E400884668 /* Images.xcassets */; };
+		FFD851DE1AF219E400884668 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD851DC1AF219E400884668 /* LaunchScreen.xib */; };
+		FFD851EA1AF219E500884668 /* DumplingDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD851E91AF219E500884668 /* DumplingDemoTests.swift */; };
+		FFD852001AF21C0000884668 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD851F81AF21BC900884668 /* CloudKit.framework */; };
+		FFD852011AF21C0A00884668 /* NewsstandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD851F91AF21BC900884668 /* NewsstandKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FFD851E41AF219E500884668 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFD851C41AF219E400884668 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFD851CB1AF219E400884668;
+			remoteInfo = DumplingDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FFD8520D1AF232C400884668 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FFD5C3561AF34B4700811FE4 /* Dumpling2.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FFD5C3531AF34B3500811FE4 /* Dumpling2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dumpling2.framework; sourceTree = SOURCE_ROOT; };
+		FFD851CC1AF219E400884668 /* DumplingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DumplingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFD851D01AF219E400884668 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFD851D11AF219E400884668 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FFD851D31AF219E400884668 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		FFD851D51AF219E400884668 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FFD851D81AF219E400884668 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FFD851DA1AF219E400884668 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FFD851DD1AF219E400884668 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FFD851E31AF219E500884668 /* DumplingDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DumplingDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFD851E81AF219E500884668 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFD851E91AF219E500884668 /* DumplingDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DumplingDemoTests.swift; sourceTree = "<group>"; };
+		FFD851F81AF21BC900884668 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		FFD851F91AF21BC900884668 /* NewsstandKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NewsstandKit.framework; path = System/Library/Frameworks/NewsstandKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFD851C91AF219E400884668 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFD852011AF21C0A00884668 /* NewsstandKit.framework in Frameworks */,
+				FFD5C3551AF34B4700811FE4 /* Dumpling2.framework in Frameworks */,
+				FFD852001AF21C0000884668 /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFD851E01AF219E500884668 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFD851C31AF219E400884668 = {
+			isa = PBXGroup;
+			children = (
+				FFD851CE1AF219E400884668 /* DumplingDemo */,
+				FFD851E61AF219E500884668 /* DumplingDemoTests */,
+				FFD851CD1AF219E400884668 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFD851CD1AF219E400884668 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFD851CC1AF219E400884668 /* DumplingDemo.app */,
+				FFD851E31AF219E500884668 /* DumplingDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFD851CE1AF219E400884668 /* DumplingDemo */ = {
+			isa = PBXGroup;
+			children = (
+				FFD851D11AF219E400884668 /* AppDelegate.swift */,
+				FFD851D31AF219E400884668 /* MasterViewController.swift */,
+				FFD851D51AF219E400884668 /* DetailViewController.swift */,
+				FFD851D71AF219E400884668 /* Main.storyboard */,
+				FFD851DA1AF219E400884668 /* Images.xcassets */,
+				FFD851DC1AF219E400884668 /* LaunchScreen.xib */,
+				FFD851CF1AF219E400884668 /* Supporting Files */,
+			);
+			path = DumplingDemo;
+			sourceTree = "<group>";
+		};
+		FFD851CF1AF219E400884668 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FFD5C3531AF34B3500811FE4 /* Dumpling2.framework */,
+				FFD851F81AF21BC900884668 /* CloudKit.framework */,
+				FFD851F91AF21BC900884668 /* NewsstandKit.framework */,
+				FFD851D01AF219E400884668 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FFD851E61AF219E500884668 /* DumplingDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFD851E91AF219E500884668 /* DumplingDemoTests.swift */,
+				FFD851E71AF219E500884668 /* Supporting Files */,
+			);
+			path = DumplingDemoTests;
+			sourceTree = "<group>";
+		};
+		FFD851E71AF219E500884668 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FFD851E81AF219E500884668 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFD851CB1AF219E400884668 /* DumplingDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFD851ED1AF219E500884668 /* Build configuration list for PBXNativeTarget "DumplingDemo" */;
+			buildPhases = (
+				FFD851C81AF219E400884668 /* Sources */,
+				FFD851C91AF219E400884668 /* Frameworks */,
+				FFD851CA1AF219E400884668 /* Resources */,
+				FFD8520D1AF232C400884668 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DumplingDemo;
+			productName = DumplingDemo;
+			productReference = FFD851CC1AF219E400884668 /* DumplingDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FFD851E21AF219E500884668 /* DumplingDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFD851F01AF219E500884668 /* Build configuration list for PBXNativeTarget "DumplingDemoTests" */;
+			buildPhases = (
+				FFD851DF1AF219E500884668 /* Sources */,
+				FFD851E01AF219E500884668 /* Frameworks */,
+				FFD851E11AF219E500884668 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFD851E51AF219E500884668 /* PBXTargetDependency */,
+			);
+			name = DumplingDemoTests;
+			productName = DumplingDemoTests;
+			productReference = FFD851E31AF219E500884668 /* DumplingDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFD851C41AF219E400884668 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "29th Street";
+				TargetAttributes = {
+					FFD851CB1AF219E400884668 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = H7629QXCD5;
+					};
+					FFD851E21AF219E500884668 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = FFD851CB1AF219E400884668;
+					};
+				};
+			};
+			buildConfigurationList = FFD851C71AF219E400884668 /* Build configuration list for PBXProject "DumplingDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFD851C31AF219E400884668;
+			productRefGroup = FFD851CD1AF219E400884668 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFD851CB1AF219E400884668 /* DumplingDemo */,
+				FFD851E21AF219E500884668 /* DumplingDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFD851CA1AF219E400884668 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFD851D91AF219E400884668 /* Main.storyboard in Resources */,
+				FFD851DE1AF219E400884668 /* LaunchScreen.xib in Resources */,
+				FFD851DB1AF219E400884668 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFD851E11AF219E500884668 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFD851C81AF219E400884668 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFD851D61AF219E400884668 /* DetailViewController.swift in Sources */,
+				FFD851D41AF219E400884668 /* MasterViewController.swift in Sources */,
+				FFD851D21AF219E400884668 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFD851DF1AF219E500884668 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFD851EA1AF219E500884668 /* DumplingDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFD851E51AF219E500884668 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFD851CB1AF219E400884668 /* DumplingDemo */;
+			targetProxy = FFD851E41AF219E500884668 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FFD851D71AF219E400884668 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFD851D81AF219E400884668 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FFD851DC1AF219E400884668 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFD851DD1AF219E400884668 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FFD851EB1AF219E500884668 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FFD851EC1AF219E500884668 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFD851EE1AF219E500884668 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				INFOPLIST_FILE = DumplingDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Debug;
+		};
+		FFD851EF1AF219E500884668 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				INFOPLIST_FILE = DumplingDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Release;
+		};
+		FFD851F11AF219E500884668 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DumplingDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DumplingDemo.app/DumplingDemo";
+			};
+			name = Debug;
+		};
+		FFD851F21AF219E500884668 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DumplingDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DumplingDemo.app/DumplingDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFD851C71AF219E400884668 /* Build configuration list for PBXProject "DumplingDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFD851EB1AF219E500884668 /* Debug */,
+				FFD851EC1AF219E500884668 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFD851ED1AF219E500884668 /* Build configuration list for PBXNativeTarget "DumplingDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFD851EE1AF219E500884668 /* Debug */,
+				FFD851EF1AF219E500884668 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFD851F01AF219E500884668 /* Build configuration list for PBXNativeTarget "DumplingDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFD851F11AF219E500884668 /* Debug */,
+				FFD851F21AF219E500884668 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFD851C41AF219E400884668 /* Project object */;
+}
