@@ -32,7 +32,7 @@ class MasterViewController: UITableViewController {
         issueHandler = IssueHandler(folder: docsDir)
         if let handler = issueHandler {
             if handler.getIssue(issueId) == nil {
-                handler.addIssueFromAPI(issueId)
+                handler.addIssueFromAPI(issueId, volumeId: nil)
             }
             else {
                 self.updateIssueDetails()
