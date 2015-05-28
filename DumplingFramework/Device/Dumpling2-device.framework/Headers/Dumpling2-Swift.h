@@ -182,7 +182,11 @@ SWIFT_CLASS("_TtC9Dumpling27Article")
 /// \param type The article type which should be searched and returned
 ///
 /// \param excludeType The article type which should not be included in the search
-+ (NSArray * __nullable)getArticlesFor:(NSString * __nullable)issueId type:(NSString * __nullable)type excludeType:(NSString * __nullable)excludeType;
+///
+/// \param count Number of articles to be returned
+///
+/// \param page Page number (will be used with count)
++ (NSArray * __nullable)getArticlesFor:(NSString * __nullable)issueId type:(NSString * __nullable)type excludeType:(NSString * __nullable)excludeType count:(NSInteger)count page:(NSInteger)page;
 
 /// This method inputs the global id of an article and returns the Article object
 ///
@@ -244,6 +248,45 @@ SWIFT_CLASS("_TtC9Dumpling27Article")
 - (id __nullable)getValue:(NSString * __nonnull)key;
 - (SWIFT_NULLABILITY(null_unspecified) instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(null_unspecified) instancetype)initWithObject:(id __null_unspecified)object OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+/// Starter class which adds independent articles to the database 
+SWIFT_CLASS("_TtC9Dumpling214ArticleHandler")
+@interface ArticleHandler : NSObject
+
+/// Initializes the ArticleHandler with the given folder. This is where the database and assets will be saved. The method expects to find a key <code>ClientKey</code> in the project's Info.plist with your client key. If none is found, the method returns a nil
+///
+/// \param folder The folder where the database and downloaded assets should be saved
+- (SWIFT_NULLABILITY(nullable) instancetype)initWithFolder:(NSString * __nonnull)folder OBJC_DESIGNATED_INITIALIZER;
+
+/// Initializes the ArticleHandler with the Documents directory. This is where the database and assets will be saved. The API key is used for making calls to the Magnet API
+///
+/// \param clientkey Client API key to be used for making calls to the Magnet API
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithClientkey:(NSString * __nonnull)clientkey OBJC_DESIGNATED_INITIALIZER;
+
+/// Initializes the ArticleHandler with a custom directory. This is where the database and assets will be saved. The API key is used for making calls to the Magnet API
+///
+/// \param folder The folder where the database and downloaded assets should be saved
+///
+/// \param clientkey Client API key to be used for making calls to the Magnet API
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithFolder:(NSString * __nonnull)folder clientkey:(NSString * __nonnull)clientkey OBJC_DESIGNATED_INITIALIZER;
+
+/// The method uses the global id of an article, gets its content from the Magnet API and adds it to the database
+///
+/// <dl><dt>brief</dt><dd><p>Get Article details from API and add to database</p></dd></dl>
+/// \param globalId The global id for the article
+- (void)addArticleFromAPI:(NSString * __nonnull)globalId;
+- (void)addAllArticles;
+
+/// Get paginated articles (array) from the database
+///
+/// <dl><dt>return</dt><dd><p>Array of independent articles (without any issueIds)</p></dd></dl>
+/// \param page Page number for results (starts at 0)
+///
+/// \param count Number of items to be returned (specify as 0 if you need all articles)
+- (NSArray * __nullable)getAllArticles:(NSInteger)page count:(NSInteger)count;
 @end
 
 @class Issue;
