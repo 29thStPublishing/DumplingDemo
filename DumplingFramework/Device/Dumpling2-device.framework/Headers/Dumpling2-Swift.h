@@ -155,15 +155,12 @@ SWIFT_CLASS("_TtC9Dumpling27Article")
 /// URL for the article's thumbnail image
 @property (nonatomic, copy) NSString * __nonnull thumbImageURL;
 
+/// Status of article (published or not)
+@property (nonatomic) BOOL isPublished;
+
 /// Whether the article is featured for the given issue or not
 @property (nonatomic) BOOL isFeatured;
 + (NSString * __nonnull)primaryKey;
-
-/// This method accepts an article's global id, gets its details from Magnet API and adds it to the database.
-///
-/// <dl><dt>brief</dt><dd><p>Get Article from API and add to the database</p></dd></dl>
-/// \param articleId The global id for the article
-+ (void)createIndependentArticle:(NSString * __nonnull)articleId;
 
 /// This method accepts an issue's global id and deletes all articles from the database which belong to that issue
 ///
@@ -188,11 +185,29 @@ SWIFT_CLASS("_TtC9Dumpling27Article")
 /// \param page Page number (will be used with count)
 + (NSArray * __nullable)getArticlesFor:(NSString * __nullable)issueId type:(NSString * __nullable)type excludeType:(NSString * __nullable)excludeType count:(NSInteger)count page:(NSInteger)page;
 
-/// This method inputs the global id of an article and returns the Article object
+/// This method accepts an issue's global id and the key and value for article search. It retrieves all articles which meet these conditions and returns them in an array.
 ///
-/// <dl><dt>return</dt><dd><p>article object for the global id. Returns nil if the article is not found</p></dd></dl>
+/// The key and value are needed. Other articles are optional. To ignore pagination, pass the count as 0
+///
+/// <dl><dt>return</dt><dd><p>an array of articles fulfiling the conditions</p></dd></dl>
+/// \param issueId The global id of the issue whose articles have to be searched
+///
+/// \param key The key whose values need to be searched. Please ensure this has the same name as the properties available. The value can be any of the Article properties, keywords or customMeta keys
+///
+/// \param value The value of the key for the articles to be retrieved
+///
+/// \param count Number of articles to be returned
+///
+/// \param page Page number (will be used with count)
++ (NSArray * __nullable)getArticlesFor:(NSString * __nullable)issueId key:(NSString * __nonnull)key value:(NSString * __nonnull)value count:(NSInteger)count page:(NSInteger)page;
+
+/// This method inputs the global id or Apple id of an article and returns the Article object
+///
+/// <dl><dt>return</dt><dd><p>article object for the global/Apple id. Returns nil if the article is not found</p></dd></dl>
 /// \param articleId The global id for the article
-+ (Article * __nullable)getArticle:(NSString * __nonnull)articleId;
+///
+/// \param appleId The apple id/SKU for the article
++ (Article * __nullable)getArticle:(NSString * __nullable)articleId appleId:(NSString * __nullable)appleId;
 
 /// This method accepts an issue's global id and returns all articles for an issue (or if nil, all issues) with specific keywords
 ///
@@ -467,7 +482,7 @@ SWIFT_CLASS("_TtC9Dumpling25Issue")
 ///
 /// <dl><dt>return</dt><dd><p>an array of issues for given volume or all issues if volumeId is nil</p></dd></dl>
 /// \param volumeId Global id of the volume whose issues have to be retrieved
-- (NSArray * __nullable)getIssues:(NSString * __nullable)volumeId;
++ (NSArray * __nullable)getIssues:(NSString * __nullable)volumeId;
 
 /// This method inputs the global id of an issue and returns the Issue object
 ///
@@ -584,13 +599,13 @@ SWIFT_CLASS("_TtC9Dumpling28Purchase")
 /// Apple id/SKU of the purchase made - article or issue
 @property (nonatomic, copy) NSString * __nonnull appleId;
 
-/// Global id of the purchase made - article or issue
+/// Global id of the purchase made - article, issue or volume
 @property (nonatomic, copy) NSString * __nonnull globalId;
 
 /// Mode of purchase - Web (could be any - Stripe or any other), IAP
 @property (nonatomic, copy) NSString * __nonnull mode;
 
-/// Type of purchase - article or issue (it will almost always be be an issue)
+/// Type of purchase - article, issue or volume
 @property (nonatomic, copy) NSString * __nonnull type;
 
 /// Purchase date
@@ -820,6 +835,9 @@ SWIFT_CLASS("_TtC9Dumpling213VolumeHandler")
 /// <dl><dt>brief</dt><dd><p>Get Volume details from API and add to database</p></dd></dl>
 /// \param globalId The global id for the volume
 - (void)addVolumeFromAPI:(NSString * __nonnull)globalId;
+
+/// This method gets all available volumes for a client key, downloads it and saves it to the database
+- (void)addAllVolumes;
 
 /// Get volume details from database for a specific global id
 ///
