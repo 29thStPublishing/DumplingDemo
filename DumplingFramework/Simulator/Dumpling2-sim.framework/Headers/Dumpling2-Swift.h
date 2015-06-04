@@ -418,6 +418,11 @@ SWIFT_CLASS("_TtC9Dumpling25Asset")
 ///
 /// \param articleId The global id for the article
 + (NSArray * __nullable)getPlaylistFor:(NSString * __nonnull)issueId articleId:(NSString * __nonnull)articleId;
+
+/// This method returns the path of the asset file for the current object
+///
+/// <dl><dt>return</dt><dd><p>Path of the asset file or nil if not found</p></dd></dl>
+- (NSString * __nullable)getAssetPath;
 - (SWIFT_NULLABILITY(null_unspecified) instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(null_unspecified) instancetype)initWithObject:(id __null_unspecified)object OBJC_DESIGNATED_INITIALIZER;
 @end
