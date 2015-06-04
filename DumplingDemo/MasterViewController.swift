@@ -63,7 +63,7 @@ class MasterViewController: UITableViewController {
             }
         }
         
-        if let results = Article.getArticlesFor(issueId, type: nil, excludeType: nil) {
+        if let results = Article.getArticlesFor(issueId, type: nil, excludeType: nil, count: 0, page: 0) {
             for article in results {
                 let obj: Article = article as Article
                 objects.addObject(obj.title)
