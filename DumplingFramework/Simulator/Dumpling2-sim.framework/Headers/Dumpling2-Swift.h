@@ -160,6 +160,12 @@ SWIFT_CLASS("_TtC9Dumpling27Article")
 
 /// Whether the article is featured for the given issue or not
 @property (nonatomic) BOOL isFeatured;
+
+/// Global id for the issue the article belongs to. This can be blank for independent articles
+@property (nonatomic, copy) NSString * __nonnull issueId;
+
+/// SKU/Apple id for the article - will be used when articles are sold individually
+@property (nonatomic, copy) NSString * __nonnull appleId;
 + (NSString * __nonnull)primaryKey;
 
 /// This method accepts an issue's global id and deletes all articles from the database which belong to that issue
@@ -293,7 +299,16 @@ SWIFT_CLASS("_TtC9Dumpling214ArticleHandler")
 /// <dl><dt>brief</dt><dd><p>Get Article details from API and add to database</p></dd></dl>
 /// \param globalId The global id for the article
 - (void)addArticleFromAPI:(NSString * __nonnull)globalId;
-- (void)addAllArticles;
+
+/// The method uses an SKU/Apple id of an article, gets its content from the Magnet API and adds it to the database
+///
+/// \param appleId The Apple id for the article
+- (void)addArticleWith:(NSString * __nonnull)appleId;
+
+/// The method lets you download and add all articles to the database
+///
+/// \param page Page number of articles to fetch. Limit is set to 20. Pagination starts at 0
+- (void)addAllArticles:(NSInteger)page;
 
 /// Get paginated articles (array) from the database
 ///
@@ -436,6 +451,9 @@ SWIFT_CLASS("_TtC9Dumpling25Issue")
 /// Global id of an issue - this is unique for each issue
 @property (nonatomic, copy) NSString * __nonnull globalId;
 
+/// SKU or Apple Id for an issue
+@property (nonatomic, copy) NSString * __nonnull appleId;
+
 /// Title of the issue
 @property (nonatomic, copy) NSString * __nonnull title;
 
@@ -462,6 +480,9 @@ SWIFT_CLASS("_TtC9Dumpling25Issue")
 
 /// Custom metadata of the issue
 @property (nonatomic, copy) NSString * __nonnull metadata;
+
+/// Global id of the volume to which the issue belongs (can be blank if this is an independent issue)
+@property (nonatomic, copy) NSString * __nonnull volumeId;
 + (NSString * __nonnull)primaryKey;
 
 /// This method uses the SKU/Apple id for an issue and deletes it from the database. All the issue's articles, assets, article assets are deleted from the database and the file system
@@ -626,6 +647,58 @@ SWIFT_CLASS("_TtC9Dumpling28Purchase")
 @end
 
 
+
+/// Class handling purchases 
+SWIFT_CLASS("_TtC9Dumpling215PurchaseHandler")
+@interface PurchaseHandler : NSObject
+
+/// Initializes the PurchaseHandler with the given folder. This is where the database and assets will be saved. The method expects to find a key <code>ClientKey</code> in the project's Info.plist with your client key. If none is found, the method returns a nil
+///
+/// \param folder The folder where the database is
+- (SWIFT_NULLABILITY(nullable) instancetype)initWithFolder:(NSString * __nonnull)folder OBJC_DESIGNATED_INITIALIZER;
+
+/// Initializes the PurchaseHandler with the Documents directory. This is where the database should be
+///
+/// \param clientkey Client API key to be used for making calls to the Magnet API
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithClientkey:(NSString * __nonnull)clientkey OBJC_DESIGNATED_INITIALIZER;
+
+/// Initializes the PurchaseHandler with a custom directory. This is where the database is. The API key is used for making calls to the Magnet API
+///
+/// \param folder The folder where the database is
+///
+/// \param clientkey Client API key to be used for making calls to the Magnet API
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithFolder:(NSString * __nonnull)folder clientkey:(NSString * __nonnull)clientkey OBJC_DESIGNATED_INITIALIZER;
+
+/// This method adds a purchase to the database
+///
+/// \param purchase The Purchase object
+- (void)addPurchase:(Purchase * __nonnull)purchase;
+
+/// The method returns an array of purchases made on this device - for a specific user or all purchases
+///
+/// \param userId The user identity for which purchases are to be retrieved. Pass nil for returning all purchases
+- (NSArray * __nullable)getPurchases:(NSString * __nullable)userId;
+
+/// This method accepts a Purchase's key and value for purchase search. It retrieves all purchases which meet these conditions and returns them in an array.
+///
+/// The key and value are needed. userId is optional
+///
+/// <dl><dt>return</dt><dd><p>an array of purchases fulfiling the conditions</p></dd></dl>
+/// \param key The key whose values need to be searched. Please ensure this has the same name as the properties available
+///
+/// \param value The value of the key for the purchases to be retrieved
+///
+/// \param userId The user identity for which purchases are to be retrieved. Pass nil for ignoring this
++ (NSArray * __nullable)getPurchasesFor:(NSString * __nonnull)key value:(NSString * __nonnull)value userId:(NSString * __nullable)userId;
+
+/// This method accepts a purchase object and returns the associated article, issue or volume object
+///
+/// <dl><dt>return</dt><dd><p>corresponding volume, issue or article object or nil if none found</p></dd></dl>
+/// \param purchase The Purchase object
++ (id __nullable)getPurchase:(Purchase * __nonnull)purchase;
+@end
+
+
 @interface RLMArray (SWIFT_EXTENSION(Dumpling2))
 @end
 
@@ -775,6 +848,12 @@ SWIFT_CLASS("_TtC9Dumpling26Volume")
 /// <dl><dt>return</dt><dd><p>an array of volumes</p></dd></dl>
 + (NSArray * __nullable)getVolumes;
 
+/// This method inputs the global id of a volume and returns the Volume object
+///
+/// <dl><dt>return</dt><dd><p>Volume object for the global id. Returns nil if the volume is not found</p></dd></dl>
+/// \param volumeId The global id for the volume
++ (Volume * __nullable)getVolume:(NSString * __nonnull)volumeId;
+
 /// This method saves a volume back to the database
 ///
 /// <dl><dt>brief</dt><dd><p>Save a volume to the database</p></dd></dl>
@@ -841,8 +920,15 @@ SWIFT_CLASS("_TtC9Dumpling213VolumeHandler")
 /// \param globalId The global id for the volume
 - (void)addVolumeFromAPI:(NSString * __nonnull)globalId;
 
+/// The method uses the SKU/Apple id of a volume, gets its content from the Magnet API and adds it to the database
+///
+/// \param appleId The Apple id for the volume
+- (void)addVolumeFor:(NSString * __nonnull)appleId;
+
 /// This method gets all available volumes for a client key, downloads it and saves it to the database
-- (void)addAllVolumes;
+///
+/// \param page Page number of articles to fetch. Limit is set to 20. Pagination starts at 0
+- (void)addAllVolumes:(NSInteger)page;
 
 /// Get volume details from database for a specific global id
 ///
