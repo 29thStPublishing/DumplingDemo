@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6309537B1B29CD4B00DBDB46 /* DumplingFramework in Resources */ = {isa = PBXBuildFile; fileRef = 6309537A1B29CD4B00DBDB46 /* DumplingFramework */; };
+		631965921B2B24A900980B35 /* DumplingFramework in Resources */ = {isa = PBXBuildFile; fileRef = 631965911B2B24A900980B35 /* DumplingFramework */; };
 		634BA6181B1764DA007B2630 /* Dumpling2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634BA6161B1764CA007B2630 /* Dumpling2.framework */; };
 		634BA6191B1764DA007B2630 /* Dumpling2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 634BA6161B1764CA007B2630 /* Dumpling2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FFD851D21AF219E400884668 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD851D11AF219E400884668 /* AppDelegate.swift */; };
@@ -46,7 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6309537A1B29CD4B00DBDB46 /* DumplingFramework */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DumplingFramework; sourceTree = "<group>"; };
+		631965911B2B24A900980B35 /* DumplingFramework */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DumplingFramework; sourceTree = "<group>"; };
 		634BA6161B1764CA007B2630 /* Dumpling2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dumpling2.framework; sourceTree = SOURCE_ROOT; };
 		FFD851CC1AF219E400884668 /* DumplingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DumplingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD851D01AF219E400884668 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		FFD851C31AF219E400884668 = {
 			isa = PBXGroup;
 			children = (
-				6309537A1B29CD4B00DBDB46 /* DumplingFramework */,
+				631965911B2B24A900980B35 /* DumplingFramework */,
 				FFD851CE1AF219E400884668 /* DumplingDemo */,
 				FFD851E61AF219E500884668 /* DumplingDemoTests */,
 				FFD851CD1AF219E400884668 /* Products */,
@@ -229,7 +229,7 @@
 				FFD851D91AF219E400884668 /* Main.storyboard in Resources */,
 				FFD851DE1AF219E400884668 /* LaunchScreen.xib in Resources */,
 				FFD851DB1AF219E400884668 /* Images.xcassets in Resources */,
-				6309537B1B29CD4B00DBDB46 /* DumplingFramework in Resources */,
+				631965921B2B24A900980B35 /* DumplingFramework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

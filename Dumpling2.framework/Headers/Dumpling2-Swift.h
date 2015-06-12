@@ -925,6 +925,9 @@ SWIFT_CLASS("_TtC9Dumpling213VolumeHandler")
 /// \param appleId The Apple id for the volume
 - (void)addVolumeFor:(NSString * __nonnull)appleId;
 
+/// This method gets last 20 volumes for a client key, downloads it and saves it to the database
+- (void)addAllVolumes;
+
 /// This method gets all available volumes for a client key, downloads it and saves it to the database
 ///
 /// \param page Page number of articles to fetch. Limit is set to 20. Pagination starts at 0
