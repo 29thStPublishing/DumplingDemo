@@ -492,4 +492,34 @@ This is a protocol for managing access control to various purchases. The client 
 6. **syncPurchases(userId: AnyObject)** This method syncs all purchases saved in the database to the server for given user identity. All purchases which do not have a user id (i.e. have been purchased on the device through IAPs) will also be marked as purchased by this user on the server
 
 
-**Sample implementation of AccessControl coming soon**
+##Sample Implementation
+A sample implementation of in-app purchases is provided in the demo. For the purpose of this demo, we are assuming all products purchased are **Articles**.
+
+The classes of interest for the IAP implementation are
+
+1. **PurchasesViewController.swift** This class is where the IAP product info is loaded and listed in a table view. When you select a row, it will add the row's product id to the payment queue. On successful verification of the purchase, you will be taken to ```PurchaseDetailViewController```
+
+    a. **getProductInfo()** In this method make sure you replace the sample product ids with actual product ids for your in-app purchases
+    
+    b. **restorePurchases(sender:)** This method has commented calls for various methods provided in the AccessControl class
+
+2. **PurchaseDetailViewController.swift** This class downloads a purchased article and adds it to the database by creating a ```Purchase``` class object
+
+3. **AccessControlDemo.swift** This class is the implementation of the AccessControl protocol. It also implements the ```SKPaymentTransactionObserver``` method
+
+4. **NetworkManager.swift** This class is used for handling all network calls to the subscriber API (used mostly by the ```AccessControlDemo``` class)
+
+    a. The **baseURL** used in the ```init()``` method will change. Right now it is pointing to the test server
+    
+    b. The **secretKey** used to generate the header is hard-coded for now to test against the staging server. This will change in the final implementation. 29.io will provide the secretKey
+    
+
+###To-dos for getting the demo to work
+
+1. Set the correct team under **General** tab of the target and change the bundle identifier
+
+2. Under **Capabilities** tab for the target, turn on **In-app purchases**
+
+3. Replace the **ClientKey** in the Info.plist with your client key
+
+4. In the **PurchasesViewController**, change the product identifiers in the ```getProductInfo()``` method
