@@ -25,8 +25,7 @@ class NetworkManager: AFHTTPRequestOperationManager {
     }
     
     init() {
-        //MARK: This URL will change
-        var url = NSURL(string: "http://ec2-54-152-212-191.compute-1.amazonaws.com:8090/")
+        var url = NSURL(string: "https://serial-subscriber.29.io/")
         super.init(baseURL: url)
     }
     
@@ -40,7 +39,9 @@ class NetworkManager: AFHTTPRequestOperationManager {
         
         let nonce = self.generateNonce()
         //MARK: This secret key will change
-        let secretKey = "014146b0d72a438cc94ff7df8b21c4c2"
+        var mainBundle = NSBundle.mainBundle()
+        var secretKey: String = mainBundle.objectForInfoDictionaryKey("SharedSecret") as! String
+        
         self.requestSerializer.setValue(nonce, forHTTPHeaderField: "X-Serial-Nonce")
         
         var parameters: NSString = NSString()
@@ -86,7 +87,9 @@ class NetworkManager: AFHTTPRequestOperationManager {
     func requestSyncData(methodType: String, urlString:String, params: AnyObject?) -> AnyObject? {
         
         let nonce = self.generateNonce()
-        let secretKey = "014146b0d72a438cc94ff7df8b21c4c2"
+        var mainBundle = NSBundle.mainBundle()
+        var secretKey: String = mainBundle.objectForInfoDictionaryKey("SharedSecret") as! String
+        
         self.requestSerializer.setValue(nonce, forHTTPHeaderField: "X-Serial-Nonce")
         
         var parameters: NSString = NSString()

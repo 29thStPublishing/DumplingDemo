@@ -522,4 +522,6 @@ The classes of interest for the IAP implementation are
 
 3. Replace the **ClientKey** in the Info.plist with your client key
 
-4. In the **PurchasesViewController**, change the product identifiers in the ```getProductInfo()``` method
+4. Replace the **SharedSecret** in the Info.plist with your Apple in-app purchases Shared Secret generated in **itunesconnect.apple.com**
+
+5. In the **PurchasesViewController**, change the product identifiers in the ```getProductInfo()``` method

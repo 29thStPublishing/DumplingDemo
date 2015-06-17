@@ -50,5 +50,7 @@
 	<true/>
 	<key>ClientKey</key>
 	<string>YourKeyHere</string>
+	<key>SharedSecret</key>
+	<string>Your_IAP_SharedSecret_Here</string>
 </dict>
 </plist>
