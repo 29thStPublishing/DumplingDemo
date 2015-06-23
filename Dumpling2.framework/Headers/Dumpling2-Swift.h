@@ -642,6 +642,7 @@ SWIFT_CLASS("_TtC9Dumpling28Purchase")
 
 /// Identity used for syncing web purchases
 @property (nonatomic, copy) NSString * __nonnull userIdentity;
++ (NSString * __nonnull)primaryKey;
 - (SWIFT_NULLABILITY(null_unspecified) instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(null_unspecified) instancetype)initWithObject:(id __null_unspecified)object OBJC_DESIGNATED_INITIALIZER;
 @end

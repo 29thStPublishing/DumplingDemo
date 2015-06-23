@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		634BA6181B1764DA007B2630 /* Dumpling2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634BA6161B1764CA007B2630 /* Dumpling2.framework */; };
 		634BA6191B1764DA007B2630 /* Dumpling2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 634BA6161B1764CA007B2630 /* Dumpling2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63533E0C1B39627D00549B7E /* DumplingFramework in Resources */ = {isa = PBXBuildFile; fileRef = 63533E0B1B39627D00549B7E /* DumplingFramework */; };
 		63C1A0A11B2FD8B600779FA6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C1A0A01B2FD8B600779FA6 /* StoreKit.framework */; };
 		63C1A0A31B2FD8C200779FA6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C1A0A21B2FD8C200779FA6 /* CFNetwork.framework */; };
 		63C1A0A51B2FD8CA00779FA6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C1A0A41B2FD8CA00779FA6 /* SystemConfiguration.framework */; };
@@ -16,8 +17,6 @@
 		63C1A0AB1B2FD99A00779FA6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C1A0AA1B2FD99A00779FA6 /* NetworkManager.swift */; };
 		63C1A0AD1B2FDA2E00779FA6 /* PurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C1A0AC1B2FDA2E00779FA6 /* PurchasesViewController.swift */; };
 		63C1A0AF1B2FDCB800779FA6 /* PurchaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C1A0AE1B2FDCB800779FA6 /* PurchaseDetailViewController.swift */; };
-		63C1A0B51B2FE68F00779FA6 /* Dumpling2-device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C1A0B21B2FE68F00779FA6 /* Dumpling2-device.framework */; };
-		63C1A0B61B2FE68F00779FA6 /* Dumpling2-sim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C1A0B41B2FE68F00779FA6 /* Dumpling2-sim.framework */; };
 		FFD851D21AF219E400884668 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD851D11AF219E400884668 /* AppDelegate.swift */; };
 		FFD851D41AF219E400884668 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD851D31AF219E400884668 /* MasterViewController.swift */; };
 		FFD851D61AF219E400884668 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD851D51AF219E400884668 /* DetailViewController.swift */; };
@@ -55,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		634BA6161B1764CA007B2630 /* Dumpling2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dumpling2.framework; sourceTree = SOURCE_ROOT; };
+		63533E0B1B39627D00549B7E /* DumplingFramework */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DumplingFramework; sourceTree = "<group>"; };
 		63C1A0A01B2FD8B600779FA6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		63C1A0A21B2FD8C200779FA6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		63C1A0A41B2FD8CA00779FA6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -63,8 +63,6 @@
 		63C1A0AA1B2FD99A00779FA6 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = Helpers/NetworkManager.swift; sourceTree = "<group>"; };
 		63C1A0AC1B2FDA2E00779FA6 /* PurchasesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasesViewController.swift; sourceTree = "<group>"; };
 		63C1A0AE1B2FDCB800779FA6 /* PurchaseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseDetailViewController.swift; sourceTree = "<group>"; };
-		63C1A0B21B2FE68F00779FA6 /* Dumpling2-device.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "Dumpling2-device.framework"; sourceTree = "<group>"; };
-		63C1A0B41B2FE68F00779FA6 /* Dumpling2-sim.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "Dumpling2-sim.framework"; sourceTree = "<group>"; };
 		FFD851CC1AF219E400884668 /* DumplingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DumplingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD851D01AF219E400884668 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFD851D11AF219E400884668 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,11 +86,9 @@
 				63C1A0A51B2FD8CA00779FA6 /* SystemConfiguration.framework in Frameworks */,
 				63C1A0A31B2FD8C200779FA6 /* CFNetwork.framework in Frameworks */,
 				63C1A0A11B2FD8B600779FA6 /* StoreKit.framework in Frameworks */,
-				63C1A0B61B2FE68F00779FA6 /* Dumpling2-sim.framework in Frameworks */,
 				FFD852011AF21C0A00884668 /* NewsstandKit.framework in Frameworks */,
 				634BA6181B1764DA007B2630 /* Dumpling2.framework in Frameworks */,
 				FFD852001AF21C0000884668 /* CloudKit.framework in Frameworks */,
-				63C1A0B51B2FE68F00779FA6 /* Dumpling2-device.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,35 +111,10 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
-		63C1A0B01B2FE68F00779FA6 /* DumplingFramework */ = {
-			isa = PBXGroup;
-			children = (
-				63C1A0B11B2FE68F00779FA6 /* Device */,
-				63C1A0B31B2FE68F00779FA6 /* Simulator */,
-			);
-			path = DumplingFramework;
-			sourceTree = "<group>";
-		};
-		63C1A0B11B2FE68F00779FA6 /* Device */ = {
-			isa = PBXGroup;
-			children = (
-				63C1A0B21B2FE68F00779FA6 /* Dumpling2-device.framework */,
-			);
-			path = Device;
-			sourceTree = "<group>";
-		};
-		63C1A0B31B2FE68F00779FA6 /* Simulator */ = {
-			isa = PBXGroup;
-			children = (
-				63C1A0B41B2FE68F00779FA6 /* Dumpling2-sim.framework */,
-			);
-			path = Simulator;
-			sourceTree = "<group>";
-		};
 		FFD851C31AF219E400884668 = {
 			isa = PBXGroup;
 			children = (
-				63C1A0B01B2FE68F00779FA6 /* DumplingFramework */,
+				63533E0B1B39627D00549B7E /* DumplingFramework */,
 				63C1A0A61B2FD8FA00779FA6 /* DumplingDemo-Bridging-Header.h */,
 				63C1A0A41B2FD8CA00779FA6 /* SystemConfiguration.framework */,
 				63C1A0A21B2FD8C200779FA6 /* CFNetwork.framework */,
@@ -292,6 +263,7 @@
 				FFD851D91AF219E400884668 /* Main.storyboard in Resources */,
 				FFD851DE1AF219E400884668 /* LaunchScreen.xib in Resources */,
 				FFD851DB1AF219E400884668 /* Images.xcassets in Resources */,
+				63533E0C1B39627D00549B7E /* DumplingFramework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
